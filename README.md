@@ -1,8 +1,9 @@
-cat > /home/claude/README.md << 'ENDOFREADME'
 # Lumina-Layers
 
 An experimental FDM engine exploring **layered optical color mixing**.  
 Starting with CMYK pixel art, evolving into a universal multi-material photo processor.
+
+**[📖 中文文档 / Chinese Version](README_CN.md)**
 
 ---
 
@@ -122,7 +123,7 @@ pip install -r requirements.txt
 
 ## 🚀 Usage Guide
 
-### Quick Start (Unified App)
+### Quick Start
 ```bash
 python LuminaStudio.py
 ```
@@ -196,24 +197,6 @@ This launches the web interface with all three modules in tabs.
 
 ---
 
-## 📁 Project Structure
-
-```
-Lumina-Layers/
-├── LuminaStudio.py      # Main unified application (v1.2)
-├── requirements.txt     # Python dependencies
-├── README.md
-└── docs/
-    └── (screenshots)
-```
-
-**Legacy files** (deprecated, kept for reference):
-- `calibration_gen.py` - Standalone calibration generator
-- `calibration_app.py` - Standalone color extractor  
-- `app.py` - Standalone image converter
-
----
-
 ## 📄 License
 
 This project is licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**.
@@ -229,3 +212,5 @@ This project is licensed under the **Creative Commons Attribution-NonCommercial-
 Made with ❤️ by [MIN]
 
 **⭐ Star this repo if you find it useful!**
+
+</div>
