@@ -10,14 +10,50 @@
 Main Entry Point
 """
 
-from ui import create_app
+import os
+import time
+import threading
+import webbrowser
+from ui.layout import create_app
+from core.tray import LuminaTray
 
+PORT = 7860
+
+def start_browser():
+    """Launch the default web browser after a short delay."""
+    time.sleep(2)
+    webbrowser.open(f"http://127.0.0.1:{PORT}")
 
 if __name__ == "__main__":
+    print("🚀 Starting System Tray...")
+
+    # 1. Start System Tray
+    try:
+        tray = LuminaTray(port=PORT)
+        tray.run()
+    except Exception as e:
+        print(f"⚠️ Warning: System tray failed to start: {e}")
+
+    # 2. Start Browser Thread
+    threading.Thread(target=start_browser, daemon=True).start()
+
+    # 3. Launch Gradio App
+    print(f"✨ Lumina Studio is running on http://127.0.0.1:{PORT}")
     app = create_app()
+
     app.launch(
-        inbrowser=True,
-        server_port=7860,
-        share=False,
-        show_error=True
+        inbrowser=False,
+        server_name="127.0.0.1",
+        server_port=PORT,
+        show_error=True,
+        prevent_thread_lock=True,
+        favicon_path="icon.ico" if os.path.exists("icon.ico") else None
     )
+
+    # 4. Keep Main Thread Alive
+    try:
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        print("Stopping...")
+        os._exit(0)
