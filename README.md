@@ -54,6 +54,7 @@ Lumina Studio will continue to operate on an open-source, collaborative, and non
 - If you or your company wish to support the project's continued development, please contact us. Sponsored products will only be used for software development, testing, and optimization.
 - Sponsorship represents support for the project only and does not constitute any commercial binding.
 - We reject any sponsorship collaborations that could influence technical decisions or open-source licenses.
+
 Lumina Studio did not refer to any patent applications because such patents usually only contain specifications and the technical code is not disclosed in the short term. Blindly referring to these patents would affect its own development process.
 
 **Special thanks to the HueForge team for their support and understanding of open source!**  **
