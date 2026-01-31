@@ -403,7 +403,7 @@ def create_converter_tab_content(lang: str) -> dict:
                     I18n.get('conv_structure_double', lang),
                     I18n.get('conv_structure_single', lang)
                 ],
-                value=I18n.get('conv_structure_double', lang),
+                value=I18n.get('conv_structure_single', lang),
                 label=I18n.get('conv_structure', lang)
             )
                 
@@ -418,30 +418,30 @@ def create_converter_tab_content(lang: str) -> dict:
             )
                 
             components['slider_conv_quantize_colors'] = gr.Slider(
-                minimum=8, maximum=256, step=8, value=64,
+                minimum=8, maximum=256, step=8, value=32,
                 label=I18n.get('conv_quantize_colors', lang),
                 info=I18n.get('conv_quantize_info', lang)
             )
                 
             components['checkbox_conv_auto_bg'] = gr.Checkbox(
                 label=I18n.get('conv_auto_bg', lang),
-                value=True,
+                value=False,
                 info=I18n.get('conv_auto_bg_info', lang)
             )
                 
             components['slider_conv_tolerance'] = gr.Slider(
-                0, 150, 40,
+                0, 150, 10,
                 label=I18n.get('conv_tolerance', lang),
                 info=I18n.get('conv_tolerance_info', lang)
             )
                 
             components['slider_conv_width'] = gr.Slider(
-                20, 400, 60,
+                20, 400, 100,
                 label=I18n.get('conv_width', lang)
             )
                 
             components['slider_conv_thickness'] = gr.Slider(
-                0.2, 3.5, 1.2, step=0.08,
+                0.2, 3.5, 0.8, step=0.08,
                 label=I18n.get('conv_thickness', lang)
             )
                 
