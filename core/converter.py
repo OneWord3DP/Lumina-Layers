@@ -467,17 +467,17 @@ def _build_voxel_matrix(material_matrix, mask_solid, spacer_thick, structure_mod
         full_matrix[5 + spacer_layers:] = top_voxels
     else:
         # Single-sided mode
-        total_layers = 5 + spacer_layers
+        total_layers = spacer_layers+5
         full_matrix = np.full((total_layers, target_h, target_w), -1, dtype=int)
-        
+
         # Bottom layers
-        full_matrix[0:5] = bottom_voxels
-        
-        # Backing
         spacer = np.full((target_h, target_w), -1, dtype=int)
         spacer[~mask_transparent] = 0
-        for z in range(5, total_layers):
+        for z in range(spacer_layers):
             full_matrix[z] = spacer
+        
+        # Top layers
+        full_matrix[spacer_layers:] = bottom_voxels
     
     return full_matrix
 
